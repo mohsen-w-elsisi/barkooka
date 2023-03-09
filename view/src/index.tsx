@@ -1,7 +1,8 @@
-/* @refresh reload */
+import './bulma.min.css'
 
 import { render } from 'solid-js/web';
 import { Router } from '@solidjs/router';
+
 import App from './app';
 
 const root = document.getElementById('root');

@@ -1,16 +1,17 @@
-import type { Component } from 'solid-js';
-import { useRoutes } from '@solidjs/router';
+import { useRoutes } from "@solidjs/router";
 
-import { routes } from './routes';
+import { routes } from "./routes";
+import NavBar from "./components/NavBar";
 
-const App: Component = () => {
+export default function App() {
   const Route = useRoutes(routes);
 
   return (
-    <main>
-      <Route />
-    </main>
+    <>
+      <NavBar />
+      <main>
+        <Route />
+      </main>
+    </>
   );
-};
-
-export default App;
+}
