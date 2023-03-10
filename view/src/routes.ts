@@ -2,6 +2,7 @@ import { RouteDefinition } from "@solidjs/router";
 import AboutPage from "./pages/About";
 
 import Home from "./pages/Home";
+import Magazine from "./pages/Magazine";
 import PageNotFound from "./pages/PageNotFuond";
 
 export const routes: RouteDefinition[] = [
@@ -12,6 +13,10 @@ export const routes: RouteDefinition[] = [
   {
     path: "/about",
     component: AboutPage,
+  },
+  {
+    path: "/week/:week",
+    component: Magazine,
   },
   {
     path: "**",
