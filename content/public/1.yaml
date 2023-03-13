@@ -1,3 +1,17 @@
 ttile: barkookas taste nice
 week: 1
-text: say i love ozmba "i love zomvba"!!!!!
+content:
+  - type: riddle
+    title: example riddle
+    oldAnswer: pigs
+    newRiddle: you guess
+  - type: recipe
+    title: egg soup
+    steps:
+      - boild the potato in the oven for five minutes
+      - Some versions of Microsoft Word also generate 
+        the text using the =lorem() function. Just type 
+        it in your Word document and you will get this 
+        paragraph Lorem ipsum dolor sit amet, 
+        consectetuer adipiscing elit
+      - enjoy your meal
