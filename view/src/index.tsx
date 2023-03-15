@@ -1,4 +1,4 @@
-import './bulma.min.css'
+import './style.scss'
 
 import { render } from 'solid-js/web';
 import { Router } from '@solidjs/router';

@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Marhey:wght@500&family=Noto+Kufi+Arabic&display=swap");
+
+@mixin shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@mixin rounded-corners {
+  border-radius: 0.8rem;
+}
+
+@mixin title-font {
+  font-family: marhey;
+}
+
+@mixin body-font {
+  font-family: "noto kufi sans";
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 5%);
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+
+  background-color: hsl(0, 0%, 95%);
+}
+
+main {
+  padding: 0 1rem;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include title-font();
+}
+
+p,
+a {
+  @include body-font();
+}
+
+.large-heading {
+  font-size: 3rem;
+}
+
+.medium-heading {
+  font-size: 2.5rem;
+}
+
+.small-heading {
+  font-size: 2rem;
+}
+
+hr {
+  margin: 2rem 0;
+  border: 0;
+}
+
+.card {
+  @include shadow();
+  @include rounded-corners();
+
+  padding: 1rem;
+
+  background-color: white;
+  border: 2px solid black;
+}
+
+.card-grid {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  gap: 2rem;
+  // place-items: center;
+
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 500px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
