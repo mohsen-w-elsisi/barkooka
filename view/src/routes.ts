@@ -3,6 +3,7 @@ import AboutPage from "./pages/About";
 
 import Home from "./pages/Home";
 import Magazine from "./pages/Magazine";
+import MagazineList from "./pages/MagazineList";
 import PageNotFound from "./pages/PageNotFuond";
 
 export const routes: RouteDefinition[] = [
@@ -17,6 +18,10 @@ export const routes: RouteDefinition[] = [
   {
     path: "/week/:week",
     component: Magazine,
+  },
+  {
+    path: "/all",
+    component: MagazineList,
   },
   {
     path: "**",
