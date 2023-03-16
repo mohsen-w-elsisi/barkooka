@@ -1,3 +1,9 @@
+export interface MagazineIndexEntry {
+  number: number;
+  title: string;
+  discribtion: string;
+}
+
 export interface Magazine {
   title: string;
   week: number;

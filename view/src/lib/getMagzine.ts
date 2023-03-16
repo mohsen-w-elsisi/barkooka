@@ -1,7 +1,18 @@
 import { parse as parseYaml } from "yaml";
-import { Magazine } from "./MagazineContent.types";
+import { Magazine, MagazineIndexEntry } from "./MagazineContent.types";
 
 const CONTENT_SERVER_URL = "https://barkooka-content.web.app/";
+const MAGAZINE_INDEX_URL = CONTENT_SERVER_URL + "index.yaml";
+
+export async function getMagazineIndex() {
+  const fetchedMagazineIndexResponse = await fetch(MAGAZINE_INDEX_URL);
+  const magazineIndexAsYamlString = await fetchedMagazineIndexResponse.text();
+  const magasineIndexAsJson: MagazineIndexEntry[] = parseYaml(
+    magazineIndexAsYamlString
+  );
+
+  return magasineIndexAsJson;
+}
 
 type MagazineNumber = number | string;
 
@@ -13,7 +24,7 @@ function fetchMagazineNumber(number: MagazineNumber) {
   return fetch(magazineUrlNumber(number));
 }
 
-export default async function getMagazineNumber(number: MagazineNumber) {
+export async function getMagazineNumber(number: MagazineNumber) {
   const fetchedMagazineResponse = await fetchMagazineNumber(number);
   const magazienAsYamlString = await fetchedMagazineResponse.text();
   const magazineAsJson: Magazine = parseYaml(magazienAsYamlString);
